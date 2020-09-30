@@ -9,12 +9,22 @@ class HomeController extends Controller
     //
     public function index(Request $request)
     {
-        return view('home');
+        return view('pages.index');
+    }
+
+    public function help()
+    {
+        return 'help';
+    }
+
+    public function about()
+    {
+        return 'about';
     }
 
     public function test(Request $request)
     {
-        $keyword = $request->input('keyword');
+        $keyword = $request->input('keyword') ?? 'lily';
         $c = new \TopClient;
         $c->appkey = env('PUB_ALIMAMA_APPKEY', 29437588);
         $c->secretKey = env('PUB_ALIMAMA_APPSECRET');
@@ -58,6 +68,6 @@ class HomeController extends Controller
         // $req->setSpecialId("2323"); // 会员运营ID
         // $req->setRelationId("3243"); // 渠道关系ID，仅适用于渠道推广场景
         $resp = $c->execute($req);
-        dd($resp);
+        return view('pages.index', compact('resp'));
     }
 }

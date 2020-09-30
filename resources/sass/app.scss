@@ -1,1 +1,37 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.card {
+    .card-title {
+        font-size: 1rem; color: #000;
+    }
+    .card-body {
+        padding: .3rem;
+    }
+    .card-text {
+        font-size: .8rem;
+    }
+}
+.btn-primary {
+    background-color: #ff2e8b !important; border-color: #ff2e8b !important;
+}
+.col-custom-padding {
+    padding: 5px !important;
+}
+.col-custom-padding:nth-child(odd) {
+    padding-right: 5px !important;
+}
+.col-custom-padding:nth-child(even) {
+    padding-left: 5px !important;
+}
+.coupon {
+    color: #fff; 
+    background-color: #c06ef7 !important; 
+    border: 1px dashed #8513cf !important;
+}
